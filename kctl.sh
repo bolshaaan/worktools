@@ -5,11 +5,10 @@ CMD=$2
 
 echo "SCRUM: $SCRUM; CMD: $CMD"
 
-if [ -z "$2" ]; then
-	echo "use fullowing:  kctl.sh scrumN (logs|ca|ru)";
+if [ $# -ne 2 ]; then
+	echo "use following:  kctl.sh scrumN (logs|ca|ru)";
 	exit 0;
 fi
-
 
 if [ $CMD = "logs" ]; then
 	KPOD=`kubectl --namespace ${SCRUM} get pod | perl -ne ' print $1 if /(employee-restrictions-\d+\w+-\w+)/; '`
