@@ -3,8 +3,8 @@
 
 
 ### examples: 
- - view logs on scrum50: kctl.sh scrum50 publicapi logs
- - get sh on scrum50: kctl.sh scrum50 publicapi sh
+ - view logs on scrum50: *kctl.sh scrum50 publicapi logs*
+ - get sh on scrum50: *kctl.sh scrum50 publicapi sh*
 
 as piece fo a cake
  
