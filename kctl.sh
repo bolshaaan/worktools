@@ -2,7 +2,6 @@
 
 SCRUM=$1
 CMD=$2
-
 WHAT=$3
 
 if [ -z "${WHAT}" ]; then
@@ -30,8 +29,7 @@ elif [ $CMD = "ru" ]; then
 	kubectl --namespace $SCRUM exec -it $KPOD -c ru sh
 else
 
-
-	KPOD=`kubectl --namespace ${SCRUM} get pod | CMD=$CMD perl -ne ' print $1 if /($ENV{CMD}-\d+\w+-\w+)/; '`
+	KPOD=`kubectl --namespace ${SCRUM} get pod | CMD=$CMD perl -ne ' print $1 if /($ENV{CMD}-\w+-\w+)/; '`
 	printf '\033[31m%s\033[0m\n\n\n'  "<=== Making SSH to $KPOD $CMD ===>"
 
 	if [ $WHAT = logs ]; then
